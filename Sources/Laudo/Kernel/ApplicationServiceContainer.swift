@@ -7,13 +7,13 @@
 
 import Swinject
 
-protocol ApplicationServiceContainer {
+public protocol ApplicationServiceContainer {
     var container: Container { get }
     func resolve<Service>(_ serviceType: Service.Type) -> Service
     func resolve<Service>(_ serviceType: Service.Type, name: String?) -> Service
 }
 
-extension ApplicationServiceContainer {
+public extension ApplicationServiceContainer {
     func registerServices(providers: [ServiceProvider.Type]) {
         providers.forEach { (providerType) in
             let provider = providerType.init(container: container)
