@@ -22,7 +22,7 @@ public struct AlertPresenter {
     let rejectTitle: String?
     
     /// A closure to be run when the user taps accept button
-    let handler: @escaping (Outcome) -> Void
+    let handler: (Outcome) -> Void
     
     
     // MARK: - Initialization
