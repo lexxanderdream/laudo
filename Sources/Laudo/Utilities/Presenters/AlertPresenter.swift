@@ -22,11 +22,11 @@ public struct AlertPresenter {
     let rejectTitle: String?
     
     /// A closure to be run when the user taps accept button
-    let handler: (Outcome) -> Void
+    let handler: @escaping (Outcome) -> Void
     
     
     // MARK: - Initialization
-    public init(title: String, message: String? = nil, acceptTitle: String, rejectTitle: String?, handler: (AlertPresenter.Outcome) -> Void) {
+    public init(title: String, message: String? = nil, acceptTitle: String, rejectTitle: String?, handler: @escaping (AlertPresenter.Outcome) -> Void) {
         self.title = title
         self.message = message
         self.acceptTitle = acceptTitle
