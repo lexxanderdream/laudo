@@ -24,6 +24,17 @@ public struct AlertPresenter {
     /// A closure to be run when the user taps accept button
     let handler: (Outcome) -> Void
     
+    
+    // MARK: - Initialization
+    public init(title: String, message: String? = nil, acceptTitle: String, rejectTitle: String?, handler: (AlertPresenter.Outcome) -> Void) {
+        self.title = title
+        self.message = message
+        self.acceptTitle = acceptTitle
+        self.rejectTitle = rejectTitle
+        self.handler = handler
+    }
+    
+    // MARK: - Methods
     public func present(in viewController: UIViewController) {
         
         // Initializer alert controller
