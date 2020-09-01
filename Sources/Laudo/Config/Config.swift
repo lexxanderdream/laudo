@@ -9,15 +9,15 @@ import Foundation
 
 public struct Config {
     
-    static var name: String {
+    public static var name: String {
         return AppInfo.CFBundleName
     }
     
-    static var version: String {
+    public static var version: String {
         return AppInfo.CFBundleShortVersionString
     }
     
-    static var build: String {
+    public static var build: String {
         return AppInfo.CFBundleVersion
     }
     
