@@ -27,7 +27,7 @@ public enum Environment: String {
         }
 
         // Create Environment
-        guard let environment = Environment(rawValue: rawValue.lowercased()) else {
+        guard let environment = Environment(rawValue: value.lowercased()) else {
             fatalError("Invalid Environment")
         }
 
