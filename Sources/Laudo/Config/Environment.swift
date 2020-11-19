@@ -5,6 +5,7 @@
 //  Created by Alexander Zhuchkov on 31.05.2020.
 //
 
+import Foundation
 
 public enum Environment: String {
     
