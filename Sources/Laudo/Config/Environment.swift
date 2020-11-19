@@ -6,39 +6,23 @@
 //
 
 
-public enum Environment {
+public enum Environment: String {
     
     // MARK: - Environments
     case development
+    case staging
     case production
     
     // MARK: - Current Environment
     static let current: Environment = {
-        return Environment.development
-    }()
-}
-
-
-
-/*
-enum Environment: String {
-
-    // MARK: - Environments
-
-    case staging
-    case production
-
-    // MARK: - Current Environment
-
-    static let current: Environment = {
         // Read Value From Info.plist
         guard let value = Bundle.main.infoDictionary?["CONFIGURATION"] as? String else {
-            fatalError("No Configuration Found")
-        }
-
-        // Extract Environment
-        guard let rawValue = value.split(separator: "/").last else {
-            fatalError("Invalid Environment")
+            // Define Environment based on debug release
+            if Config.debug {
+                return .development
+            } else {
+                return .production
+            }
         }
 
         // Create Environment
@@ -49,4 +33,3 @@ enum Environment: String {
         return environment
     }()
 }
-*/
